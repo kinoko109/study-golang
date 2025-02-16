@@ -77,4 +77,29 @@ func main() {
 
 	c := []byte(byteA)
 	fmt.Println(c)
+
+	// 配列 - Goの配列型は要素数を変更できない。要素数を変える場合は、スライス型を使用する。
+	var arr1 [3]int
+	fmt.Println(arr1)
+	fmt.Printf("%T\n", arr1)
+
+	// index2番目は未定義なので、空文字になる
+	var arr2 [3]string = [3]string{"A", "B"}
+	fmt.Println(arr2)
+
+	// スプレッド
+	arr4 := [...]string{"A", "B"}
+	fmt.Println(arr4)
+	fmt.Printf("%T\n", arr4)
+
+	fmt.Println(arr1[0])
+	fmt.Println(arr2[1])
+
+	// 要素変更
+	fmt.Println(arr1[0])
+	arr1[0] = 592375927
+	fmt.Println(arr1[0])
+
+	//　要素数
+	fmt.Println(len(arr2))
 }
