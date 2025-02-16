@@ -102,4 +102,15 @@ func main() {
 
 	//　要素数
 	fmt.Println(len(arr2))
+
+	// interface & nil
+	// interfaceの初期値はｎilで、どんな型とも互換性がある
+	var interfaceA interface{}
+	fmt.Println(interfaceA)
+	interfaceA = 1
+	fmt.Println(interfaceA)
+	interfaceA = "aaaa"
+	fmt.Println(interfaceA)
+	interfaceA = [1]int{1}
+	fmt.Println(interfaceA)
 }
