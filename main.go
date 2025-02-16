@@ -182,7 +182,19 @@ func main() {
 	fmt.Println(closureFunc("hello"))
 	fmt.Println(closureFunc("my"))
 	fmt.Println(closureFunc("name"))
+
+	generatorIntegers := intergers()
+	fmt.Println(generatorIntegers())
+	fmt.Println(generatorIntegers())
+	fmt.Println(generatorIntegers())
+	fmt.Println(generatorIntegers())
+
+	generatorIntegers2 := intergers()
+	fmt.Println(generatorIntegers2())
+	fmt.Println(generatorIntegers2())
+	fmt.Println(generatorIntegers2())
 }
+
 func Closure() func(string)string {
 	var store string
 	return func(next string)string {
@@ -220,4 +232,13 @@ func Div(x, y int)(int, int) {
 func Double(price int)(result int) {
 	result = price * 2
 	return
+}
+
+// ジェネレーター
+func intergers() func()int {
+	i := 0
+	return func()int {
+		i++
+		return i
+	}
 }
