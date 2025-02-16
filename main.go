@@ -148,4 +148,31 @@ func main() {
 	fmt.Println(Domain)
 	fmt.Println(SiteName)
 	fmt.Println(first, second, third)
+
+	plusValue := Plus(1, 2)
+	fmt.Println(plusValue)
+
+	divValue1, divValu2 := Div(10, 2)
+	fmt.Println(divValue1, divValu2)
+
+	doubleValue := Double(2)
+	fmt.Println(doubleValue)
+}
+
+// 関数
+func Plus(x, y int)int {
+	return x + y
+}
+
+func Div(x, y int)(int, int) {
+	a := x / y
+	b := x % y
+
+	return a, b
+}
+
+// 返り値の型に変数名指定すると、returnで省略できる
+func Double(price int)(result int) {
+	result = price * 2
+	return
 }
