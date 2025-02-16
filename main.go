@@ -51,4 +51,16 @@ func main() {
 	// fmt.Println(i4)
 
 	outer()
+
+	// int型
+	var i64 int64 = 10000
+	fmt.Println(i64)
+
+	// 違うint型同士はエラーになる
+	// fmt.Println(i + i64)
+
+	// 型変換を行うことで計算できる
+	fmt.Println(int64(i) + i64)
+	// 型を表示
+	fmt.Printf("%T\n", int64(i))
 }
