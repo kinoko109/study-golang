@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"strconv"
 	"time"
 )
 
@@ -113,4 +114,19 @@ func main() {
 	fmt.Println(interfaceA)
 	interfaceA = [1]int{1}
 	fmt.Println(interfaceA)
+
+	// 型変換
+	var stringVar string = "1000"
+	fmt.Printf("stringVar = %T\n", stringVar)
+
+	numberVar, _ := strconv.Atoi(stringVar)
+	fmt.Println(numberVar)
+	fmt.Printf("numberVar = %T\n", numberVar)
+
+	var h string = "Hello"
+	b := []byte(h)
+	fmt.Println(b)
+
+	h2 := string(b)
+	fmt.Println(h2)
 }
