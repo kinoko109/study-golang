@@ -193,6 +193,26 @@ func main() {
 	fmt.Println(generatorIntegers2())
 	fmt.Println(generatorIntegers2())
 	fmt.Println(generatorIntegers2())
+
+	// if
+	condition := 0
+	if(condition == 1) {
+		fmt.Println("one")
+	} else if condition == 2 {
+		fmt.Println("two")
+	} else {
+		fmt.Println("other")
+	}
+
+	if conditionA := 100; conditionA == 100 {
+		fmt.Println("100です")
+	}
+
+	conditionB := 0
+	if conditionB := 100; true {
+		fmt.Println(conditionB)
+	}
+	fmt.Println(conditionB)
 }
 
 func Closure() func(string)string {
