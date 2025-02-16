@@ -11,6 +11,20 @@ func outer() {
 	fmt.Println(s4)
 }
 
+	// 定数
+	const P1 = 3.14 // 頭文字を大文字にするとパブリック変数になる
+
+	const (
+		Domain = "test.co.jp"
+		SiteName = "test"
+	)
+
+	const (
+		first = iota // iotaは連番を自動採番して返す
+		second
+		third
+	)
+
 func main() {
 	fmt.Println("Hellow World")
 	fmt.Print(time.Now())
@@ -129,4 +143,9 @@ func main() {
 
 	h2 := string(b)
 	fmt.Println(h2)
+
+	fmt.Println(P1)
+	fmt.Println(Domain)
+	fmt.Println(SiteName)
+	fmt.Println(first, second, third)
 }
