@@ -157,6 +157,19 @@ func main() {
 
 	doubleValue := Double(2)
 	fmt.Println(doubleValue)
+
+	// 無名関数
+	funcMumei := func(x, y int)int {
+		return x + y
+	}
+	mumei := funcMumei(1, 1)
+	fmt.Println(mumei)
+
+	// 即時実行
+	funcMumei2 := func(x, y int)int {
+		return x + y
+	}(1,100)
+	fmt.Println(funcMumei2)
 }
 
 // 関数
