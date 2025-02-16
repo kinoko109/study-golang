@@ -68,4 +68,13 @@ func main() {
 	fmt.Println(`test
 	test
 	`)
+
+	// byte型
+	byteA := []byte{72, 73}
+	fmt.Println(byteA)
+
+	fmt.Println(string(byteA))
+
+	c := []byte(byteA)
+	fmt.Println(c)
 }
