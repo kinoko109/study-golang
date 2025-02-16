@@ -170,6 +170,25 @@ func main() {
 		return x + y
 	}(1,100)
 	fmt.Println(funcMumei2)
+
+	returnedFunc := ReturnFunc()
+	returnedFunc()
+
+	CallbackFunc(func() {
+		fmt.Println("im a callback function!!")
+	})
+}
+
+// 関数を引数にとる関数
+func CallbackFunc(f func()) {
+	f()
+}
+
+// 関数を返す関数
+func ReturnFunc()func() {
+	return func() {
+		fmt.Println("im function!!")
+	}
 }
 
 // 関数
