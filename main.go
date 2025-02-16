@@ -177,6 +177,19 @@ func main() {
 	CallbackFunc(func() {
 		fmt.Println("im a callback function!!")
 	})
+
+	closureFunc := Closure()
+	fmt.Println(closureFunc("hello"))
+	fmt.Println(closureFunc("my"))
+	fmt.Println(closureFunc("name"))
+}
+func Closure() func(string)string {
+	var store string
+	return func(next string)string {
+		stringValue := store
+		store = next
+		return stringValue
+	}
 }
 
 // 関数を引数にとる関数
