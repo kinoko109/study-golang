@@ -213,6 +213,14 @@ func main() {
 		fmt.Println(conditionB)
 	}
 	fmt.Println(conditionB)
+
+	// エラーハンドリング
+	var status string = "error"
+	errorValue, err := strconv.Atoi(status)
+	if err != nil {
+		fmt.Println(err)
+	}
+	fmt.Printf("errorValue = %T\n", errorValue)
 }
 
 func Closure() func(string)string {
