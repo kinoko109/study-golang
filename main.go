@@ -63,4 +63,9 @@ func main() {
 	fmt.Println(int64(i) + i64)
 	// 型を表示
 	fmt.Printf("%T\n", int64(i))
+
+	// string
+	fmt.Println(`test
+	test
+	`)
 }
