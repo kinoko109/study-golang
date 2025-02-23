@@ -237,6 +237,20 @@ func main() {
 	for i, v := range arr {
 		fmt.Println(i, v)
 	}
+
+	sl := []string{"python", "php", "go"}
+	for i, v := range sl {
+		fmt.Println(i, v)
+	}
+
+	// map
+	map1 := map[string]int {
+		"apple": 100,
+		"banana": 500,
+	}
+	for k, v := range map1 {
+		fmt.Println(k, v)
+	}
 }
 
 func Closure() func(string)string {
