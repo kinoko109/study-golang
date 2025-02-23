@@ -251,6 +251,31 @@ func main() {
 	for k, v := range map1 {
 		fmt.Println(k, v)
 	}
+
+	// switch
+	condition1 := 1
+	switch condition1 {
+	case 1, 2:
+		fmt.Println("1 or 2")
+	case 3, 4:
+		fmt.Println("3 or 4")
+	default:
+		fmt.Println("defalut")
+	}
+
+	switch condition2 := 100; condition2 {
+	case 100:
+		fmt.Println("100")
+	default:
+		fmt.Println("default")
+	}
+
+	switch {
+	case condition1 == 1:
+		fmt.Println("1")
+	default:
+		fmt.Println("default")
+	}
 }
 
 func Closure() func(string)string {
