@@ -276,6 +276,30 @@ func main() {
 	default:
 		fmt.Println("default")
 	}
+
+	// ラベル付きfor
+	// Loop:
+	// 	for {
+	// 		for {
+	// 			for {
+	// 				fmt.Println("START")
+	// 				break
+	// 			}
+	// 			fmt.Println("実行したくない")
+	// 		}
+	// 		fmt.Println("実行したくない")
+	// 	}
+	// 	fmt.Println("END")
+	Loop:
+	for i := 0; i < 3; i++ {
+		for j := 1; j < 3; j++ {
+			if j > 1 {
+				continue Loop // jが3を超えるまで、一番はじめのforに戻る
+			}
+			fmt.Println(i, j, i*j)
+		}
+		fmt.Println("実行したくない")
+	}
 }
 
 func Closure() func(string)string {
