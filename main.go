@@ -318,13 +318,27 @@ func main() {
 	file.Write([]byte("Hello"))
 
 	// panic
-	defer func() {
-		if x:= recover(); x != nil {
-			fmt.Println(x)
-		}
-	}()
-	panic("runtime error")
-	fmt.Println("start")
+	// defer func() {
+	// 	if x:= recover(); x != nil {
+	// 		fmt.Println(x)
+	// 	}
+	// }()
+	// panic("runtime error")
+	// fmt.Println("start")
+
+	// goroutin
+	go sub()
+	for {
+		fmt.Println("main loop")
+		time.Sleep(200 * time.Millisecond)
+	}
+}
+// 並行処理
+func sub() {
+	for {
+		fmt.Println("sub loop")
+		time.Sleep(100 * time.Millisecond)
+	}
 }
 
 // defer
