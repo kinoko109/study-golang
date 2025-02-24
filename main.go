@@ -316,6 +316,15 @@ func main() {
 	}
 	defer file.Close()
 	file.Write([]byte("Hello"))
+
+	// panic
+	defer func() {
+		if x:= recover(); x != nil {
+			fmt.Println(x)
+		}
+	}()
+	panic("runtime error")
+	fmt.Println("start")
 }
 
 // defer
