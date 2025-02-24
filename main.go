@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"os"
 	"strconv"
 	"time"
 )
@@ -300,6 +301,33 @@ func main() {
 		}
 		fmt.Println("実行したくない")
 	}
+
+	TestDefer()
+	defer func() {
+		fmt.Println("1")
+		fmt.Println("2")
+		fmt.Println("3")
+	}()
+	RunDefer()
+
+	file, fileError := os.Create("test.txt")
+	if fileError != nil {
+		fmt.Println("fileError", fileError)
+	}
+	defer file.Close()
+	file.Write([]byte("Hello"))
+}
+
+// defer
+func TestDefer() {
+	defer fmt.Println("EMD")
+	fmt.Println("START")
+}
+
+func RunDefer() {
+	defer fmt.Println("a")
+	defer fmt.Println("b")
+	defer fmt.Println("c")
 }
 
 func Closure() func(string)string {
