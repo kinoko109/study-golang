@@ -302,13 +302,13 @@ func main() {
 		fmt.Println("実行したくない")
 	}
 
-	TestDefer()
-	defer func() {
-		fmt.Println("1")
-		fmt.Println("2")
-		fmt.Println("3")
-	}()
-	RunDefer()
+	// TestDefer()
+	// defer func() {
+	// 	fmt.Println("1")
+	// 	fmt.Println("2")
+	// 	fmt.Println("3")
+	// }()
+	// RunDefer()
 
 	file, fileError := os.Create("test.txt")
 	if fileError != nil {
@@ -327,11 +327,30 @@ func main() {
 	// fmt.Println("start")
 
 	// goroutin
-	go sub()
-	for {
-		fmt.Println("main loop")
-		time.Sleep(200 * time.Millisecond)
-	}
+	// go sub()
+	// for {
+	// 	fmt.Println("main loop")
+	// 	time.Sleep(200 * time.Millisecond)
+	// }
+
+	// make
+	slice1 := []int{100, 200}
+	fmt.Println(slice1)
+
+	slice1 = append(slice1, 1000, 2000)
+	fmt.Println(slice1)
+
+	slice2 := make([]int, 5, 10)
+	fmt.Println(slice2)
+	fmt.Println(len(slice2))
+	fmt.Println(cap(slice2))
+
+	// 容量を超えた数をappendしたりすると、自動的的に初期の容量の倍が確保されてしまう
+	slice2 = append(slice2, 1,2,3,4,5,6,7,8)
+	fmt.Println(slice2)
+	fmt.Println(len(slice2))
+	fmt.Println(cap(slice2))
+
 }
 // 並行処理
 func sub() {
