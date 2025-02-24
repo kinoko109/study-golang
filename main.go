@@ -351,6 +351,19 @@ func main() {
 	fmt.Println(len(slice2))
 	fmt.Println(cap(slice2))
 
+	// copy
+	slice3 := []int{100, 200}
+	slice2 = slice3
+
+	// 参照渡しになるので、slice3も書き換わってしまう
+	slice2[0] = 999
+	fmt.Println(slice3)
+//
+	slice4 := []int{1,2,3,4,5}
+	slice2 = make([]int, 5, 10)
+	n := copy(slice2, slice4)
+	fmt.Println(n, slice4)
+
 }
 // 並行処理
 func sub() {
